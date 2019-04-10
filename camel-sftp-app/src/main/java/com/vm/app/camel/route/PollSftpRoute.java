@@ -27,8 +27,8 @@ public class PollSftpRoute extends RouteBuilder {
 				.to("file:data/out1");
 
 		from("{{sftp.endpoint2}}").routeId("pollSftpRoute2")
-				.log(LoggingLevel.INFO, "Downloaded file from input folder 2.")
-				.to("file:data/out2");
+				.log(LoggingLevel.INFO, "Downloaded file from input folder and send to output folder")
+				.to("{{sftp.endpoint3}}");
 
 	}
 
